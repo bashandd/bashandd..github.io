@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillNova Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-image: url("https://res.cloudinary.com/dlx3p0rc2/image/upload/v1744471100/back_v6vfns.jpg");
+            color:white;
+        }
+        body {
+            /* background: linear-gradient(135deg, #434444, #fafedb); */
+            /* background-image: url(logo1.jpg); */
+            /* background-size: cover; */
+            /* image-resolution: 100vh; */
+            /* color: white; */
+            text-align: center;
+            background-image: url("https://res.cloudinary.com/dlx3p0rc2/image/upload/v1744471100/back_v6vfns.jpg");
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background:rgb(3,4,94); */
+        }
+        .container {
+            width: 90%;
+            background:rgb(0,180,216);
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color:white;
+            border:2px solid rgba(255,255,255,.2);
+                backdrop-filter: blur(20px);
+                box-shadow:0 0 10px rgba(0,0,0,.2);
+                color:#fff;
+                border-radius:10px;
+                padding:30px 40px;
+            
+
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            padding-top:50px;
+            padding-bottom: 50px;
+            background:transparent;
+                border:2px solid rgba(255,255,255,.2);
+                backdrop-filter: blur(20px);
+                box-shadow:0 0 10px rgba(0,0,0,.2);
+                color:#fff;
+                border-radius:10px;
+                padding:30px 40px;
+            
+            /* background:rgb(3,4,94);          */
+        }
+        .option {
+            /* background: white; */
+            color:white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 250px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .option:hover {
+            transform: scale(1.1);
+            /* background: #f8f9fa; */
+        }
+        .option i {
+            font-size: 60px;
+            margin-bottom: 10px;
+            display: block;
+            color:white;
+        }
+        .option a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">SkillNova</div>
+        <div class="options">
+        	<div class="option">
+   			 <a href="login4.html" target="_blank">
+   			     <i class='bx bxs-user-plus'></i>
+   			     Student
+  		 	 </a>
+			</div>
+	        <div class="option">
+   			 <a href="login4.html" target="_blank">
+   			     <i class='bx bxs-user-check'></i>
+   			     Admin
+  		 	 </a>
+			</div>
+	        <div class="option">
+   			 <a href="login4.html" target="_blank">
+   			     <i class='bx bxs-chalkboard'></i>
+   			     Mentor
+  		 	 </a>
+			</div>
+			
+        </div>
+    </div>
+</body>
+</html>

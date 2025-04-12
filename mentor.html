@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentor Details - SkillNova</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    .sidebar {
+      width: 250px;
+      background: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding-top: 60px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-y: auto;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .sidebar ul li:hover {
+      background: #34495e;
+    }
+    .sidebar ul li i {
+      margin-right: 10px;
+    }
+    .dropdown-content {
+      display: none;
+      background: #34495e;
+      padding-left: 30px;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: #3b5998;
+    }
+    .active .dropdown-content {
+      display: block;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      background: #1e272e;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      font-size: 20px;
+    }
+    .navbar img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 80px 30px;
+      width: 100%;
+    }
+
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .mentor-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .mentor-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .mentor-card h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .mentor-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .mentor-card a {
+      text-decoration: none;
+      color: #1e90ff;
+      font-weight: bold;
+    }
+    .sidebar a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li onclick="toggleDropdown('profile')"><i class='bx bxs-user'></i> <a href="profile.html"> Profile</a></li>
+      <div id="profile" class="dropdown-content">
+        <a href="profile.html">View Profile</a>
+        <a href="#">Edit Profile</a>
+      </div>
+      <li onclick="toggleDropdown('courses')"><i class='bx bxs-book'></i> <a href="course.html">Course Details</a></li>
+            <div id="courses" class="dropdown-content">
+                <a href="#">Enrolled Courses</a>
+                <a href="#">Course Catalog</a>
+            </div>
+
+            <li onclick="toggleDropdown('online')"><i class='bx bxs-video'></i><a href="online.html"> Online Classes</a></li>
+            <div id="online" class="dropdown-content">
+                <a href="#">Live Classes</a>
+                <a href="#">Recorded Sessions</a>
+            </div>
+
+            <li onclick="toggleDropdown('quiz')"><i class='bx bxs-edit-alt'></i><a href="quiz.html">Quiz</a></li>
+            <div id="quiz" class="dropdown-content">
+                <a href="#">Upcoming Quizzes</a>
+                <a href="#">Quiz History</a>
+            </div>
+
+            <li onclick="toggleDropdown('tracking')"><i class='bx bxs-bar-chart-alt-2'></i><a href="coursetrack.html"> Course Tracking</a></li>
+            <div id="tracking" class="dropdown-content">
+                <a href="#">Progress Overview</a>
+                <a href="#">Achievements</a>
+            </div>
+
+            <li onclick="toggleDropdown('rankings')"><i class='bx bxs-medal'></i><a href="monthlyrank.html"> Monthly Rankings</a></li>
+            <div id="rankings" class="dropdown-content">
+                <a href="#">Leaderboard</a>
+                <a href="#">Your Rank</a>
+            </div>
+
+            <li onclick="toggleDropdown('mentor')"><i class='bx bxs-group'></i> <a href="mentor.html">Mentor Details</a></li>
+            <div id="mentor" class="dropdown-content">
+                <a href="#">Assigned Mentors</a>
+                <a href="#">Contact Mentors</a>
+            </div>
+    </ul>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="logo.jpg" alt="Logo">
+    <span>Mentor Details</span>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h2>👩‍🏫 Assigned Mentors</h2>
+    <div class="mentor-grid">
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Mentor">
+        <h3>Dr. Anjali Mehta</h3>
+        <p>Data Science & ML</p>
+        <a href="mailto:anjali@skillnova.com">Contact</a>
+      </div>
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mentor">
+        <h3>Mr. Rahul Kapoor</h3>
+        <p>Web Development</p>
+        <a href="mailto:rahul@skillnova.com">Contact</a>
+      </div>
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Mentor">
+        <h3>Prof. Suresh Iyer</h3>
+        <p>Cybersecurity</p>
+        <a href="mailto:suresh@skillnova.com">Contact</a>
+      </div>
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Mentor">
+        <h3>Ms. Nisha Rao</h3>
+        <p>UI/UX Design</p>
+        <a href="mailto:nisha@skillnova.com">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id) {
+      var element = document.getElementById(id);
+      element.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

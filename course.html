@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Details - SkillNova</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+    .sidebar {
+      width: 250px;
+      background: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding-top: 60px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-y: auto;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .sidebar ul li:hover {
+      background: #34495e;
+    }
+    .sidebar ul li i {
+      margin-right: 10px;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      background: #1e272e;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      font-size: 20px;
+    }
+    .navbar img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 80px 30px;
+      width: 100%;
+    }
+
+    .package {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .package h3 {
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .course {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ecf0f1;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-radius: 10px;
+    }
+    /* .course.chosen {
+      background: #d1f5d3;
+      border-left: 5px solid green;
+      font-weight: bold;
+    } */
+    .course i {
+      color: green;
+    }
+    .sidebar a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+}
+.sidebar {
+      width: 250px;
+      background: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding-top: 60px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-y: auto;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .sidebar ul li:hover {
+      background: #34495e;
+    }
+    .sidebar ul li i {
+      margin-right: 10px;
+    }
+    .dropdown-content {
+      display: none;
+      background: #34495e;
+      padding-left: 30px;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: #3b5998;
+    }
+    .active .dropdown-content {
+      display: block;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      background: #1e272e;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      font-size: 20px;
+      z-index: 10;
+    }
+    .sidebar a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+}
+    .navbar img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 100px 30px 30px 30px;
+      width: calc(100% - 250px);
+    }
+    .profile-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .profile-box h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #2c3e50;
+    }
+    .profile-box p {
+      margin: 12px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .profile-box strong {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <ul>
+        <li onclick="toggleDropdown('profile')"><i class='bx bxs-user'></i><a href="profile.html"> Profile</a></li>
+        <div id="profile" class="dropdown-content">
+            <a href="#">View Profile</a>
+            <a href="#">Edit Profile</a>
+        </div>
+
+        <li onclick="toggleDropdown('courses')"><i class='bx bxs-book'></i> <a href="course.html">Course Details</a></li>
+        <div id="courses" class="dropdown-content">
+            <a href="#">Enrolled Courses</a>
+            <a href="#">Course Catalog</a>
+        </div>
+
+        <li onclick="toggleDropdown('online')"><i class='bx bxs-video'></i><a href="online.html"> Online Classes</a></li>
+        <div id="online" class="dropdown-content">
+            <a href="#">Live Classes</a>
+            <a href="#">Recorded Sessions</a>
+        </div>
+
+        <li onclick="toggleDropdown('quiz')"><i class='bx bxs-edit-alt'></i><a href="quiz.html">Quiz</a></li>
+        <div id="quiz" class="dropdown-content">
+            <a href="#">Upcoming Quizzes</a>
+            <a href="#">Quiz History</a>
+        </div>
+
+        <li onclick="toggleDropdown('tracking')"><i class='bx bxs-bar-chart-alt-2'></i><a href="coursetrack.html"> Course Tracking</a></li>
+        <div id="tracking" class="dropdown-content">
+            <a href="#">Progress Overview</a>
+            <a href="#">Achievements</a>
+        </div>
+
+        <li onclick="toggleDropdown('rankings')"><i class='bx bxs-medal'></i><a href="monthlyrank.html"> Monthly Rankings</a></li>
+        <div id="rankings" class="dropdown-content">
+            <a href="#">Leaderboard</a>
+            <a href="#">Your Rank</a>
+        </div>
+
+        <li onclick="toggleDropdown('mentor')"><i class='bx bxs-group'></i> <a href="mentor.html">Mentor Details</a></li>
+        <div id="mentor" class="dropdown-content">
+            <a href="#">Assigned Mentors</a>
+            <a href="#">Contact Mentors</a>
+        </div>
+
+        <li onclick="toggleDropdown('online')"><i class='bx bxs-video'></i> Recorded Videos</li>
+        <div id="online" class="dropdown-content">
+            <a href="#">Live Classes</a>
+            <a href="#">Recorded Videos</a> <!-- Added Recorded Videos Section -->
+        </div>
+    </ul>
+</div>
+
+  <div class="navbar">
+    <img src="logo.jpg" alt="Logo">
+    <span>Course Details</span>
+  </div>
+
+  <div class="content">
+    <h2>CSE Course Packages</h2>
+
+    <!-- Package 1 -->
+    <div class="package">
+      <h3>Web Development</h3>
+      <div class="course chosen">HTML & CSS <i class='bx bx-check'></i></div>
+      <div class="course">JavaScript Basics</div>
+      <div class="course">ReactJS</div>
+      <div class="course">NodeJS</div>
+      <div class="course">ExpressJS</div>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="package">
+      <h3>Data Science</h3>
+      <div class="course">Python for Data Science</div>
+      <div class="course chosen">Machine Learning <i class='bx bx-check'></i></div>
+      <div class="course">Deep Learning</div>
+      <div class="course">Data Visualization</div>
+      <div class="course">Pandas & NumPy</div>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="package">
+      <h3>Programming Foundations</h3>
+      <div class="course">C Programming</div>
+      <div class="course">C++</div>
+      <div class="course chosen">Java <i class='bx bx-check'></i></div>
+      <div class="course">Python</div>
+      <div class="course">Data Structures</div>
+    </div>
+
+    <!-- Package 4 -->
+    <div class="package">
+      <h3>Databases & Cloud</h3>
+      <div class="course">MySQL</div>
+      <div class="course">MongoDB</div>
+      <div class="course">Cloud Fundamentals</div>
+      <div class="course">AWS Basics</div>
+      <div class="course">Firebase</div>
+    </div>
+
+    <!-- Package 5 -->
+    <div class="package">
+      <h3>AI & IoT</h3>
+      <div class="course">Introduction to AI</div>
+      <div class="course">IoT with Arduino</div>
+      <div class="course chosen">AI for Robotics <i class='bx bx-check'></i></div>
+      <div class="course">Neural Networks</div>
+      <div class="course">Smart Systems</div>
+    </div>
+
+  </div>
+</body>
+</html>
